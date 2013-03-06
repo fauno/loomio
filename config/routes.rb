@@ -24,7 +24,7 @@
   match "/groups/:id/members", :to => "groups#get_members", :as => :get_members, :via => :get
 
   resources :motions do
-    resources :votes, only: [:new, :create, :update]
+    resources :votes, only: [:new, :edit, :create, :update]
     post :get_and_clear_new_activity, on: :member
     put :close, :on => :member
     put :edit_outcome, :on => :member
